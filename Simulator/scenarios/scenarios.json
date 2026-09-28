@@ -1,0 +1,39 @@
+{
+  "scenarios": [
+    {
+      "id": "scenario_1_supplier_delay",
+      "description": "A single supplier has a production delay, pushing back all their open shipments.",
+      "event": "SUPPLIER_DELAY",
+      "params": {"delay_days": 3},
+      "expected_incident_type": "supplier_delay"
+    },
+    {
+      "id": "scenario_2_logistics_disruption",
+      "description": "A port closure or similar broad disruption delays a chunk of all active shipments at once, regardless of supplier.",
+      "event": "LOGISTICS_DISRUPTION",
+      "params": {"delay_days": 6, "affected_fraction": 0.5},
+      "expected_incident_type": "logistics_disruption"
+    },
+    {
+      "id": "scenario_3_demand_spike",
+      "description": "Customer demand for one product suddenly surges 30-60% above normal.",
+      "event": "DEMAND_SPIKE",
+      "params": {},
+      "expected_incident_type": "demand_spike"
+    },
+    {
+      "id": "scenario_4_inventory_shortage",
+      "description": "Stock for a product at a warehouse drops below its reorder point.",
+      "event": "INVENTORY_SHORTAGE",
+      "params": {},
+      "expected_incident_type": "inventory_shortage"
+    },
+    {
+      "id": "scenario_5_warehouse_unavailable",
+      "description": "A warehouse goes offline, delaying every shipment scheduled into it.",
+      "event": "WAREHOUSE_UNAVAILABLE",
+      "params": {"delay_days": 4},
+      "expected_incident_type": "logistics_disruption"
+    }
+  ]
+}

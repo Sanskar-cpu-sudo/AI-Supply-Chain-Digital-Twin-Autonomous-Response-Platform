@@ -1,0 +1,39 @@
+# Environment & Secrets (Crucial: never commit API keys or JWT secrets)
+.env
+*.env
+.env.local
+.env.*.local
+
+# Python Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytest / Testing artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local databases & uploads
+*.sqlite3
+*.db
+backend/uploads/
+uploads/
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS specific files
+.DS_Store
+Thumbs.db
